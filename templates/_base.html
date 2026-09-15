@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block seo_site %}{% endblock seo_site %}
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'bootstrap-5.3.3/dist/css/bootstrap.rtl.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
