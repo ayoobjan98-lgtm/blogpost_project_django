@@ -13,7 +13,7 @@ class AdminAccessMiddleware:
                 return render(
                     request,
                     "403.html",
-                    status=403
+                    status=404
                 )
 
             if not request.user.is_staff:
