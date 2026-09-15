@@ -1,0 +1,86 @@
+{% extends "_base.html" %}
+
+{% load crispy_forms_tags %}
+{% load madval_persian_translation %}
+{% load jformat %}
+
+{% load static %}
+
+{% block title %}
+جزئیات پست
+{% endblock title %}
+
+{% block content %}
+
+{% for message in messages %} <div class="alert alert-success mt-5" role="alert">
+{{ message }} </div>
+{% endfor %}
+
+<div class="col-8 mx-3">
+
+<!-- =========================
+     POST
+========================== -->
+
+<div
+    id="post-container"
+    class="container mt-5 p-4 shadow-lg"
+>
+    <div class="text-center text-muted">
+        در حال دریافت اطلاعات پست...
+    </div>
+</div>
+
+
+<!-- =========================
+     COMMENTS
+========================== -->
+
+<div class="container mt-5 p-4 shadow">
+
+    <div id="comments-container">
+
+        <h4 class="mt-4 text-muted">
+            در حال دریافت نظرات...
+        </h4>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     COMMENT FORM
+========================== -->
+<div class="container mt-5 p-4 shadow-lg">
+
+    <form action="" method="post">
+
+        {% csrf_token %}
+    
+        <table>
+            {{ form|crispy }}
+        </table>
+
+        <button
+            type="submit"
+            class="btn btn-outline-success mt-4 me-4"
+            name="action"
+            value="comment"
+        >
+            ارسال نظر
+        </button>
+
+    </form>
+
+</div>
+
+</div>
+
+<script>
+    const currentUsername = "{{ user.username }}";
+    const isAuthenticated = {{ user.is_authenticated|yesno:"true,false" }};
+
+</script>
+<script src="{% static 'js/detail.js' %}"></script>
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="col-8 mx-3">
+    <div class="container mt-5 p-4 shadow-lg">
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form|crispy }}
+            </table>
+            <input class="btn btn-outline-success m-4" type="submit" value="ثبت نام">
+        </form>
+    </div>
+</div>
+<script>
+    const form = document.getElementById("registerForm");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const response = await fetch(
+        "http://127.0.0.1:8000/api/auth/register/",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            })
+        }
+    );
+
+    const data = await response.json();
+
+    console.log(data);
+});
+</script>
+{% endblock content %}

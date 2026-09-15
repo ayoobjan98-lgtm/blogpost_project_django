@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="col-8 mx-3">
+    <div class="container mt-5 p-4 shadow-lg">
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>
+                        <label for="username">نام کاربری:</label>
+                    </th>
+                    <td>
+                        <input type="text" name="username" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="password1">رمز عبور:</label>
+                    </th>
+                    <td>
+                        <input type="password" name="password1" id="password1">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="password2">تکرار رمز عبور:</label>
+                    </th>
+                    <td>
+                        <input type="password" name="password2" id="password2">
+                    </td>
+                </tr>
+            </table>
+            <input class="btn btn-outline-success m-4" type="submit" value="ثبت نام">
+        </form>
+    </div>
+</div>
+{% endblock content %}

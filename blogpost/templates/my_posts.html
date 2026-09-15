@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+
+{% block title %}پست های من{% endblock title %}
+
+{% block content %}
+<div class="col-8 mx-3">
+{% for post in posts %}
+    <div class="container mt-5 p-4 shadow-lg">
+        <h2>
+            <a
+                href="{% url 'detail' pk=post.pk %}"
+                class="text-decoration-none text-info"
+            >
+                {{ post.title }}
+            </a>
+        </h2>
+        <hr>
+        <p>
+            {{ post.description }}
+            <a
+                href="{% url 'detail'  pk=post.pk  %}"
+                class="text-decoration-none text-info"
+            >
+                <span>
+                    مطالعه بیشتر
+                </span>
+            </a>
+        </p>
+        <hr>
+        <h6 class="text-muted small">
+            نویسنده:
+            {{ post.author }}
+        </h6>
+        <h6 class="text-muted small">
+            🧡
+            {{ post.likes|length }}
+        </h6>
+    </div>
+{% endfor %}
+</div>
+{% endblock content %}

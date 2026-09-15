@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}خانه{% endblock title %}
+
+{% block content %}
+
+<div class="col-8 mx-3">
+
+
+<div id="posts-container">
+    <div class="container mt-5 p-4 shadow-lg">
+        <p class="text-muted">در حال دریافت پست‌ها...</p>
+    </div>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center mt-3">
+        <li class="page-item">
+            <span class="page-link"></span>
+        </li>
+    </ul>
+</nav>
+
+
+</div>
+
+<script src="{% static "js/index.js" %}"></script>
+
+{% endblock content %}

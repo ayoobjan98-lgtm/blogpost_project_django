@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="col-8 mx-3">
+    <div class="container mt-5 p-4 shadow-lg">
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form|crispy }}
+            </table>
+            <input class="btn btn-outline-success m-4" type="submit" value="تغییر اطلاعات">
+        </form>
+    </div>
+</div>
+{% endblock content %}
