@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from ..myapi.viewsets import BlogPostViewSet
+from myapi.viewsets import BlogPostViewSet
 
 
 rotuer = DefaultRouter()

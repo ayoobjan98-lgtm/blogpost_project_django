@@ -2,8 +2,8 @@ from rest_framework import serializers
 
 from django.contrib.auth import authenticate
 
-from ..accounts.models import User
-from ..blogpost.models import BlogPost, Comment
+from accounts.models import User
+from blogpost.models import BlogPost, Comment
 
 class AuthorSerializer(serializers.Serializer):
     username = serializers.CharField()

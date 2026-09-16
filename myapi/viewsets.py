@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 
-from ..blogpost.models import BlogPost
+from blogpost.models import BlogPost
 from myapi.permissions import IsAuthenticated
 from myapi.serializers import BlogPostSerializer
 
