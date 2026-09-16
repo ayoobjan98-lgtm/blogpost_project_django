@@ -3,8 +3,8 @@ from django.views import View
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 
-from project.blogpost.models import BlogPost
-from project.myapi.serializers import BlogPostSerializer
+from blogpost.models import BlogPost
+from myapi.serializers import BlogPostSerializer
 
 class BlogPostApiView(View):
     def get(self, request, *args, **kwargs):

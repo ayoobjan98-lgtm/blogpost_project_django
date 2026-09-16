@@ -10,8 +10,8 @@ from .serializers import BlogPostSerializer, RegisterSerializer, LoginSerializer
 from .permissions import IsAuthenticated
 
 
-from project.accounts.models import User
-from project.blogpost.models import BlogPost
+from ..accounts.models import User
+from ..blogpost.models import BlogPost
 
 import json
 
