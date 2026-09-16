@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "www.blogpostprojectdjango-production.up.railway.app",
-    "https://blogpostprojectdjango-production.up.railway.app/",
+    "blogpostprojectdjango-production.up.railway.app",
 ]
 
 
