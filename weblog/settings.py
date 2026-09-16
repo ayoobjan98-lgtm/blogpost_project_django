@@ -108,15 +108,16 @@ WSGI_APPLICATION = "weblog.wsgi.application"
 #     }
 # }
 
+
 import dj_database_url
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=None,
+    "default": dj_database_url.parse(
+        os.environ["DATABASE_URL"],
         conn_max_age=600,
-        ssl_require=True,
     )
 }
+
 
 # DATABASES = {
 #     "default": {
