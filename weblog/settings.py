@@ -230,4 +230,9 @@ REST_FRAMEWORK = {
 
     "PAGE_SIZE": 2,
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://blogpostprojectdjango-production.up.railway.app",
+]
+
 ########################     END REST_FRAMEWORK ############
