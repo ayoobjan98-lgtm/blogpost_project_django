@@ -111,25 +111,25 @@ WSGI_APPLICATION = "weblog.wsgi.application"
 
 
 
-import os
-import dj_database_url
+# import os
+# import dj_database_url
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
+# DATABASE_URL = os.environ.get("DATABASE_URL")
 
-if DATABASE_URL:
-    DATABASES = {
-        "default": dj_database_url.parse(
-            DATABASE_URL,
-            conn_max_age=600,
-        )
-    }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+# if DATABASE_URL:
+#     DATABASES = {
+#         "default": dj_database_url.parse(
+#             DATABASE_URL,
+#             conn_max_age=600,
+#         )
+#     }
+# else:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": BASE_DIR / "db.sqlite3",
+#         }
+#     }
 
 
 
@@ -144,16 +144,16 @@ else:
 #     }
 # }
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "weblog_db_for_aparat_with_postgres",
-#         "USER": "postgres",
-#         "PASSWORD": "postgres",
-#         "HOST": "127.0.0.1",  # or "localhost"
-#         "PORT": "5432",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("PGDATABASE"),
+        "USER": os.getenv("PGUSER"),
+        "PASSWORD": os.getenv("PGPASSWORD"),
+        "HOST": os.getenv("PGHOST", "localhost"),  # or "localhost"
+        "PORT": os.getenv("PGPORT"),
+    }
+}
 
 
 # Password validation
